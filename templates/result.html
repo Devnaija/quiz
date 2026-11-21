@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .result{
+            background-color: #fff;
+            padding: 20px;
+            margin: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        a{
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+
+
+    <div class="result">
+        <h1>Quiz Complete</h1>
+
+        <h2>Your Score: </h2>
+
+        <h1>{{ score }} / {{ total }}</h1>
+
+        {% if score == total %}
+            <h2>Congratulations! You got all the answers correct!</h2>
+        {% elif score >= 5 %}
+            <h2>Good job! You passed the quiz.</h2>
+        {% else %}
+            <h2>Better luck next time. Keep practicing!</h2>
+        {% endif %}
+
+        <br>
+
+        <a href="{% url 'index' %}">Try Again</a>
+    </div>
+</body>
+</html>
